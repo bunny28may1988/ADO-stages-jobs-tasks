@@ -1,0 +1,15 @@
+trigger:
+  - main
+pool:
+  vmImage: "ubuntu-latest"
+stages:
+- stage: BuildApp
+  displayName: Build-Stage
+  jobs:
+  - job: BuildFrontEnd
+    displayName: Build NodeJs
+    steps:
+    - script: echo Building Frontend App
+      displayName: Build Front End
+    - script: echo running the unit tests for the frontend
+      displayName: UnitTest and Code Coverage
